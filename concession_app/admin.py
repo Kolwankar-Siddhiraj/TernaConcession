@@ -11,19 +11,23 @@ class UserAdminConfig(UserAdmin):
     ordering = ('-id',)
     list_display = ('username',)
     fieldsets = (
-        ("Details", {'fields': ('email', 'username', 'password','first_name','last_name', 'middle_name', 'email_verified_at', 
+        ("Details", {'fields': ('user_type', 'email', 'username', 'password','first_name','last_name', 'middle_name', 'email_verified_at', 
                                 'status','is_verified', 'phone')}),
         ('Permissions', {'fields': ('is_staff', 'user_permissions')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'username', 'first_name', 'middle_name', 'last_name', 'password1', 'password2', 'is_staff')}
+            'fields': ('user_type', 'email', 'username', 'first_name', 'middle_name', 'last_name', 'password1', 'password2', 'is_staff')}
          ),
     )
 
 
 admin.site.register(CustomUser, UserAdminConfig)
 
+admin.site.register(StudentInfo)
+admin.site.register(TrainDetail)
+admin.site.register(TicketDetail)
+admin.site.register(ConcessionApplication)
 
 
