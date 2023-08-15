@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/3104/3104133.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <div class="opacity-0 sm:opacity-100 md:absolute md:top-7 md:left-8">
+      <div class="w-20 lg:w-28">
+        <img src="/src/assets/images/logo_white.svg" alt="" srcset="" />
+      </div>
+    </div>
+
+    <div class="p-4 lg:flex lg:flex-row-reverse md:p-20 lg:p-0">
+      <div class="h-screen lg:w-[60%] lg:px-32 lg:pt-24">
+        <h4 class="text-xl text-gray-500 font-extralight">Section 3 of 3</h4>
+        <h1
+          class="text-xl font-medium text-accent bg-blue-100 px-12 py-3 inline-block mt-6 rounded-2xl mb-8"
+        >
+          Ticket Details
+        </h1>
+        <div class="relative">
+            <label
+              for="line"
+              class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+              >Railway Line</label
+            >
+        <select
+          id="department"
+          class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+          name="line"
+        >
+          <option>Western</option>
+          <option>Central</option>
+          <option>Harbour</option>
+          <option>Trans-harbour</option>
+          <option>Uran</option>
+        </select>
+        </div>
+
+        <div class="relative">
+            <label
+              for="period"
+              class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+              >Period</label
+            >
+        <select
+          id="period_label"
+          class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+          name="period"
+        >
+          <option>Monthly</option>
+          <option>Quaterly</option>
+        </select>
+        </div>
+
+        <div class="relative">
+            <label
+              for="couch_class"
+              class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+              >Class</label
+            >
+        <select
+          id="class_label"
+          class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+          name="class"
+        >
+          <option>First Class</option>
+          <option>Second Class</option>
+        </select>
+        </div>
+
+        <div class="flex gap-3">
+
+          <div class="relative w-1/2">
+              <label
+                for="from_label"
+                class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+                >Source</label
+              >
+          <select
+            id="from"
+            class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+            name="from"
+          >
+          <option>Chhatrapati Shivaji Maharaj Terminus</option>
+          <option>Byculla</option>
+          <option>Dadar</option>
+          <option>Kurla</option>
+          <option selected>Ghatkopar</option>
+          <option>Vikhroli</option>
+          <option>Kanjurmarg</option>
+          <option>Bhandup</option>
+          <option>Nahur</option>
+          <option>Mulund</option>
+          <option>Thane</option>
+          <option>Diva</option>
+          <option>Dombivli</option>
+          <option>Kalyan</option>
+          <option>Shahad</option>
+          <option>Ambivli</option>
+          <option>Titwala</option>
+          <option>Khadavali</option>
+          <option>Vasind</option>
+          <option>Asangaon</option>
+          <option>Atgaon</option>
+          <option>Khardi</option>
+          <option>Kasara</option>
+          <option>Churchgate</option>
+          <option>Marine Lines</option>
+          <option>Charni Road</option>
+          <option>Grant Road</option>
+          <option>Mumbai Central</option>
+          <option>Mahalaxmi</option>
+          <option>Lower Parel</option>
+          <option>Elphinstone Road</option>
+          <option>Dadar</option>
+          <option>Matunga Road</option>
+          <option>Mahim</option>
+          <option>Bandra</option>
+          <option>Khar Road</option>
+          <option>Santacruz</option>
+          <option>Vile Parle</option>
+          <option>Andheri</option>
+          <option>Jogeshwari</option>
+          <option>Ram Mandir</option>
+          <option>Goregaon</option>
+          <option>Malad</option>
+          <option>Kandivali</option>
+          <option>Borivali</option>
+          <option>Dahisar</option>
+          <option>Mira Road</option>
+          <option>Bhayandar</option>
+          <option>Naigaon</option>
+          <option>Vasai Road</option>
+          <option>Nalla Sopara</option>
+          <option>Virar</option>
+          <option>Belapur CBD</option>
+          <option>Seawoods–Darave</option>
+          <option>Nerul</option>
+          <option>Jasai</option>
+          <option>Uran</option>
+          <option>Chhatrapati Shivaji Maharaj Terminus</option>
+          <option>Masjid Bunder</option>
+          <option>Sandhurst Road</option>
+          <option>Dockyard Road</option>
+          <option>Reay Road</option>
+          <option>Cotton Green</option>
+          <option>Sewri</option>
+          <option>Vadala Road</option>
+          <option>King's Circle</option>
+          <option>Mahim</option>
+          <option>Bandra</option>
+          <option>Khar Road</option>
+          <option>Santacruz</option>
+          <option>Vile Parle</option>
+          <option>Andheri</option>
+          <option>Jogeshwari</option>
+          <option>Goregaon</option>
+          <option>Malad</option>
+          <option>Kandivali</option>
+          <option>Borivali</option>
+          <option>Dahisar</option>
+          <option>Mira Road</option>
+          <option>Bhayandar</option>
+          <option>Naigaon</option>
+          <option>Vasai Road</option>
+          <option>Nalla Sopara</option>
+          <option>Virar</option>
+          <option>Thane</option>
+          <option>Kalwa</option>
+          <option>Mumbra</option>
+          <option>Diva</option>
+          <option>Kopar</option>
+          <option>Thakurli</option>
+          <option>Kalyan</option>
+          <option>Vitthalwadi</option>
+          <option>Ulhasnagar</option>
+          <option>Ambernath</option>
+          <option>Badlapur</option>
+          <option>Vangani</option>
+          <option>Shelu</option>
+          <option>Neral</option>
+          <option>Bhivpuri Road</option>
+          <option>Karjat</option>
+          <option>Panvel</option>
+          </select>
+          </div>
+
+          <div class="relative w-1/2">
+              <label
+                for="destination_label"
+                class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+                >Destination</label
+              >
+          <select
+            id="destination"
+            class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+            name="destination"
+          >
+          <option>Chhatrapati Shivaji Maharaj Terminus</option>
+          <option>Byculla</option>
+          <option>Dadar</option>
+          <option>Kurla</option>
+          <option>Ghatkopar</option>
+          <option>Vikhroli</option>
+          <option>Kanjurmarg</option>
+          <option>Bhandup</option>
+          <option>Nahur</option>
+          <option>Mulund</option>
+          <option>Thane</option>
+          <option>Diva</option>
+          <option selected>Dombivli</option>
+          <option>Kalyan</option>
+          <option>Shahad</option>
+          <option>Ambivli</option>
+          <option>Titwala</option>
+          <option>Khadavali</option>
+          <option>Vasind</option>
+          <option>Asangaon</option>
+          <option>Atgaon</option>
+          <option>Khardi</option>
+          <option>Kasara</option>
+          <option>Churchgate</option>
+          <option>Marine Lines</option>
+          <option>Charni Road</option>
+          <option>Grant Road</option>
+          <option>Mumbai Central</option>
+          <option>Mahalaxmi</option>
+          <option>Lower Parel</option>
+          <option>Elphinstone Road</option>
+          <option>Dadar</option>
+          <option>Matunga Road</option>
+          <option>Mahim</option>
+          <option>Bandra</option>
+          <option>Khar Road</option>
+          <option>Santacruz</option>
+          <option>Vile Parle</option>
+          <option>Andheri</option>
+          <option>Jogeshwari</option>
+          <option>Ram Mandir</option>
+          <option>Goregaon</option>
+          <option>Malad</option>
+          <option>Kandivali</option>
+          <option>Borivali</option>
+          <option>Dahisar</option>
+          <option>Mira Road</option>
+          <option>Bhayandar</option>
+          <option>Naigaon</option>
+          <option>Vasai Road</option>
+          <option>Nalla Sopara</option>
+          <option>Virar</option>
+          <option>Belapur CBD</option>
+          <option>Seawoods–Darave</option>
+          <option>Nerul</option>
+          <option>Jasai</option>
+          <option>Uran</option>
+          <option>Chhatrapati Shivaji Maharaj Terminus</option>
+          <option>Masjid Bunder</option>
+          <option>Sandhurst Road</option>
+          <option>Dockyard Road</option>
+          <option>Reay Road</option>
+          <option>Cotton Green</option>
+          <option>Sewri</option>
+          <option>Vadala Road</option>
+          <option>King's Circle</option>
+          <option>Mahim</option>
+          <option>Bandra</option>
+          <option>Khar Road</option>
+          <option>Santacruz</option>
+          <option>Vile Parle</option>
+          <option>Andheri</option>
+          <option>Jogeshwari</option>
+          <option>Goregaon</option>
+          <option>Malad</option>
+          <option>Kandivali</option>
+          <option>Borivali</option>
+          <option>Dahisar</option>
+          <option>Mira Road</option>
+          <option>Bhayandar</option>
+          <option>Naigaon</option>
+          <option>Vasai Road</option>
+          <option>Nalla Sopara</option>
+          <option>Virar</option>
+          <option>Thane</option>
+          <option>Kalwa</option>
+          <option>Mumbra</option>
+          <option>Diva</option>
+          <option>Kopar</option>
+          <option>Thakurli</option>
+          <option>Kalyan</option>
+          <option>Vitthalwadi</option>
+          <option>Ulhasnagar</option>
+          <option>Ambernath</option>
+          <option>Badlapur</option>
+          <option>Vangani</option>
+          <option>Shelu</option>
+          <option>Neral</option>
+          <option>Bhivpuri Road</option>
+          <option>Karjat</option>
+          <option>Panvel</option>
+          </select>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <button
+          class="px-8 mb-5 rounded-md bg-accent text-light py-3 hover:bg-opacity-90"
+        >
+          Submit
+        </button>
+      </div>
+
+      <div class="h-0 w-0 bg-accent lg:h-screen lg:w-[40%]"></div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS FILE -->
+    <script src="script.js"></script>
+  </body>
+</html>

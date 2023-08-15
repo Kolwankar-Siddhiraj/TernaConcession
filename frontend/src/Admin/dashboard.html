@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/3104/3104133.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>Profile</title>
+  </head>
+  <body class="h-screen">
+    <div class="flex flex-col h-full">
+      <nav class="w-full h-[70px] bg-white flex justify-between items-center px-6 py-4 border-b-2 border-gray-00">
+        <div class="w-20 lg:w-28">
+          <img src="/src/assets/images/logo_blue.svg" alt="" srcset="" />
+        </div>
+        <div class="relative">
+          <div class="w-[20px] absolute top-[14px] left-12">
+            <img src="/src/assets/images/search.svg" alt="" srcset="" />
+          </div>
+          <input
+            class="h-11 w-full bg-button_trans rounded-xl text-sm text-slate-700 font-thin tracking-wider px-20 py-2 focus:outline-none"
+            type="text"
+            id="search"
+            placeholder="Search here.."
+          />
+        </div>
+      </nav>
+
+      <!-- main  -->
+      <main class="flex w-screen flex-grow bg-gray-50">
+        <section class="h-full bg-white w-[20%] flex flex-col items-center justify-between py-10">
+
+          <div class="">
+            <h1 class="name text-xl text-center">Siddhiraj R.K</h1>
+            <p class="text-descriptive text-center">srk@ternaengg.ac.in</p>
+
+            <!-- Wrapper -->
+            <div class="flex flex-col mt-10 gap-3">
+
+              <div class="bg-button_trans w-56 h-12 rounded-xl">
+                <button class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                  <img class="inline h-5 w-5 " src="../assets/images/all.svg" alt="" srcset="">
+                  <div class="">All</div>
+              </button>
+              </div>
+              <div class="bg-button_trans w-56 h-12 rounded-xl">
+                <button class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                  <img class="inline h-5 w-5 " src="../assets/images/completed.svg" alt="" srcset="">
+                  <div class="">Completed</div>
+              </button>
+              </div>
+              <div class="bg-accent w-56 h-12 rounded-xl">
+                <button class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                  <img class="inline h-5 w-5 " src="../assets/images/ongoing.svg" alt="" srcset="">
+                  <div class="text-white">Ongoing</div>
+              </button>
+              </div>
+              <div class="bg-button_trans w-56 h-12 rounded-xl">
+                <button class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                  <img class="inline h-5 w-5 " src="../assets/images/rejected.svg" alt="" srcset="">
+                  <div class="">Rejected</div>
+              </button>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="flex justify-center items-center">
+            <img src="../assets/images/logout.svg" alt="" srcset="">
+            <p class="">Logout</p>
+          </div>
+        </section>
+
+        <!-- right hand side -->
+        <section class="student-box-container overflow-hidden flex-grow bg-gray-100  p-4">
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+          <!-- Student Detail  -->
+          <div class="h-20 flex justify-between items-center bg-white px-8 border-b-2 border-gray-300">
+            <h1 class="name text-xl">Nilesh Gawli</h1>
+            <p class="email text-descriptive">nileshgawli2223@ternaengg.ac.in</p>
+            <p class="branch text-descriptive">Computer Engineering</p>
+            <div class="due flex gap-1">
+              <img class="w-4" src="../assets/images/clock.svg" alt="" />
+              <p class="due-label text-descriptive">2d</p>
+            </div>
+            <button
+              class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90"
+            >
+              View Profile
+            </button>
+          </div>
+
+
+        </section>
+      </main>
+    </div>
+
+    <!-- jQuery CDN -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS FILE -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/3104/3104133.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <div class="opacity-0 sm:opacity-100 md:absolute md:top-7 md:left-8">
+      <div class="w-20 lg:w-28">
+        <img src="/src/assets/images/logo_white.svg" alt="" srcset="" />
+      </div>
+    </div>
+
+    <div class="p-4 lg:flex lg:flex-row-reverse md:p-20 lg:p-0">
+      <div class="h-screen lg:w-[55%] lg:px-32 lg:pt-24">
+        <h4 class="text-xl text-gray-500 font-extralight">Section 2 of 3</h4>
+        <h1
+          class="text-xl font-medium text-accent bg-blue-100 px-12 py-3 inline-block mt-6 rounded-2xl mb-8"
+        >
+          College Details
+        </h1>
+        <div class="relative">
+            <label
+              for="dob"
+              class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+              >Department</label
+            >
+        <select
+          id="department"
+          class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+          name="department"
+        >
+          <option>Computer Engineering</option>
+          <option>Information Technology</option>
+          <option>Artificial Intelligence and Data Science</option>
+          <option>Mechanical Engineering</option>
+          <option>Design Engineering</option>
+          <option>Electronic Engineering</option>
+        </select>
+        </div>
+
+        <input
+          class="w-full mb-6 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+          placeholder="Enter your roll number"
+          type="number"
+        />
+
+        <div class="relative">
+            <label
+              for="dob"
+              class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+              >Semester</label
+            >
+        <select
+          id="semester"
+          class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+          name="semester"
+        >
+          <option>First</option>
+          <option>Second</option>
+          <option>Third</option>
+          <option>Fourth</option>
+          <option>Fifth</option>
+          <option>Sixth</option>
+        </select>
+        </div>
+
+
+        <!-- <div class="relative">
+            <label
+              for="dob"
+              class=" bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10"
+              >Student ID</label
+            > -->
+        <input
+          class="w-full mb-6 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+          placeholder="Enter your student ID"
+          type="text"
+        />
+        <!-- </div> -->
+
+        <!-- Buttons -->
+        <button
+          class="px-8 mb-5 rounded-md bg-accent text-light py-3 hover:bg-opacity-90"
+        >
+          Continue
+        </button>
+      </div>
+
+      <div class="h-0 w-0 bg-accent lg:h-screen lg:w-[45%]"></div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS FILE -->
+    <script src="script.js"></script>
+  </body>
+</html>
