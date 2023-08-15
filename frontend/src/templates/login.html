@@ -22,29 +22,38 @@
 
   <div class="p-4 lg:flex lg:flex-row-reverse md:p-20 lg:p-0">
 
+
     <div class="lg:w-[55%] lg:p-32">
       <h1 class="text-3xl mt-14 mb-8">Welcome back!</h1>
-      <input id="email" class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
-        placeholder="Enter your email" type="text" />
-      <input class="w-full mb-6 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
-        placeholder="Enter your password" type="password" />
-      <div class="flex justify-between items-center mb-6">
-        <div class="flex items-center">
-          <input class="w-4 h-4 accent-dark" type="checkbox" name="remember-p" id="remember_me" />
-          <p class="ml-2">Remember me</p>
-        </div>
-        <a href="#" class="hover:opacity-90 text-textaccent">Forgot password</a>
-      </div>
-      <!-- Buttons -->
-      <button class="w-full mb-5 rounded-md bg-accent text-light py-3 hover:bg-opacity-90">
-        Log in
-      </button>
+        <form action="/login" method="POST">
 
-      <div class="flex justify-center items-center">
-        <p class="text-sm text-gray-700 mx-1">Don't have an account?</p>
-        <a href="#" class="hover:opacity-90 text-textaccent">Sign up</a>
+          {% csrf_token %}
+
+          <input id="email" class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+            placeholder="Enter your email" type="text" name="email" id="email" />
+          <input class="w-full mb-6 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
+            placeholder="Enter your password" type="password" name="password" id="password"/>
+          <div class="flex justify-between items-center mb-6">
+            <div class="flex items-center">
+              <input class="w-4 h-4 accent-dark" type="checkbox" name="remember" id="remember" />
+              <p class="ml-2">Remember me</p>
+            </div>
+            <a href="/forgot-password" class="hover:opacity-90 text-textaccent">Forgot password</a>
+          </div>
+          <!-- Buttons -->
+          <button type="submit" class="w-full mb-5 rounded-md bg-accent text-light py-3 hover:bg-opacity-90">
+            Log in
+          </button>
+
+        </form>
+
+        <div class="flex justify-center items-center">
+          <p class="text-sm text-gray-700 mx-1">Don't have an account?</p>
+          <a href="/register" class="hover:opacity-90 text-textaccent">Sign up</a>
+        </div>
       </div>
-    </div>
+
+
 
 
     <div class="flex flex-col justify-center items-center h-0 w-0 bg-accent lg:h-screen lg:w-[45%] ">
