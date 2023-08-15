@@ -13,11 +13,20 @@ def index(request):
 
 def login(request):
 
-    return render(request, '')
+    if request.method == "POST":
+        print("post")
+        print("data :: ", request.POST)
+
+
+    return render(request, 'login.html')
 
 
 def register(request):
 
-    return render(request, '')
+    if request.method == "POST":
+        print("post")
+        print("data :: ", request.POST)
+
+    return render(request, 'signup.html')
 
 
