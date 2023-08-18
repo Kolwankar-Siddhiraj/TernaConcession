@@ -25,14 +25,15 @@
 
     <div class="lg:w-[55%] lg:p-32">
       <h1 class="text-3xl mt-14 mb-8">Welcome back!</h1>
-        <form action="/login" method="POST">
+
+      <form action="/login" method="POST">
 
           {% csrf_token %}
 
           <input id="email" class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
-            placeholder="Enter your email" type="text" name="email" id="email" />
+            placeholder="Enter your email" type="text" name="email" id="email" required />
           <input class="w-full mb-6 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
-            placeholder="Enter your password" type="password" name="password" id="password"/>
+            placeholder="Enter your password" type="password" name="password" id="password" required />
           <div class="flex justify-between items-center mb-6">
             <div class="flex items-center">
               <input class="w-4 h-4 accent-dark" type="checkbox" name="remember" id="remember" />

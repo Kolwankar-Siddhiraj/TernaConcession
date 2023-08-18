@@ -71,7 +71,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     status = models.CharField(max_length=100, blank=True, null=True,choices=STATUS_CHOICES)  # active, inactive, banned
 
     is_staff = models.BooleanField(default=False)
-    
+
     # timestamps
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
@@ -148,6 +148,19 @@ class ConcessionApplication(models.Model):
     source = models.CharField(max_length=30)
     destination = models.CharField(max_length=30)
     route_via = models.CharField(max_length=30, null=True, blank=True)
+
+
+class UserVerification(models.Model):
+    email = models.CharField(max_length=70, blank=True, null=True)
+    token = models.CharField(unique=True, max_length=200, blank=True, null=True)
+    # action => signup | forgotPasword | twoStepAuth | login
+    action = models.CharField(max_length=50, blank=True, null=True)
+    expire_on = models.DateTimeField(null=True, blank=True)
+    # metadata = models.JSONField(max_length=512, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+
+    def __str__(self):
+        return self.email
 
 
 

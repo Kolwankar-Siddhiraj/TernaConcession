@@ -14,7 +14,7 @@ def index(request):
 def login(request):
 
     if request.method == "POST":
-        print("post")
+        print("login")
         print("data :: ", request.POST)
 
 
@@ -24,8 +24,10 @@ def login(request):
 def register(request):
 
     if request.method == "POST":
-        print("post")
+        print("register")
         print("data :: ", request.POST)
+
+        
 
     return render(request, 'signup.html')
 
