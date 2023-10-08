@@ -1,8 +1,11 @@
 from django.urls import path
-from concession_app import views, student_views, admin_views
-
+from concession_app.views import *
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('login', views.login, name="login"),
-    path('register', views.register, name="register"),
+    path('', index, name="index"),
+    path('login', LoginView, name="login"),
+    path('register', RegisterView, name="register"),
+    
+    
+    # test
+    path('test', test, name="test"),
 ]
