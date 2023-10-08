@@ -56,7 +56,6 @@ def RegisterView(request):
         data = {"email": rd['email'], "name": rd['fname'], "action": "signup"}
 
         return render(request, 'student/checkmail.html', data)
-        
 
     return render(request, 'signup.html')
 
@@ -65,7 +64,7 @@ def RegisterView(request):
 
 def test(request):
 
-    return render(request, '')
+    return render(request, 'section1.html')
 
 
 
