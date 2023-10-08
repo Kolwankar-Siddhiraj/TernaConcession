@@ -13,6 +13,9 @@ urlpatterns = [
     path('college-details', CollegeDetailsView, name="college-details"),
     path('train-details', TrainDetailsView, name="train-details"),
     path('ticket-details', TicketDetailsView, name="train-details"),
+    path('homepage', Homepage, name="homepage"),
+    path('apply-concession', ApplyConcessionView, name="apply-concession"),
+    path('s/dashboard', StudentDashboard, name="student-dashboard"),
 
     
     # test

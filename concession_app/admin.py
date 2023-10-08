@@ -11,8 +11,8 @@ class UserAdminConfig(UserAdmin):
     ordering = ('-id',)
     list_display = ('username',)
     fieldsets = (
-        ("Details", {'fields': ('user_type', 'email', 'username', 'password','first_name','last_name', 'middle_name', 'email_verified_at', 
-                                'status','is_verified', 'phone')}),
+        ("Details", {'fields': ('user_type', 'email', 'username', 'password','first_name', 'middle_name', 'last_name', 'address', 'phone', 'email_verified_at', 
+                                'status','is_verified')}),
         ('Permissions', {'fields': ('is_staff', 'user_permissions')}),
     )
     add_fieldsets = (

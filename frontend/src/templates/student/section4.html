@@ -15,19 +15,24 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/dist/output.css" />
+    <link rel="stylesheet" href="/static/dist/output.css" />
     <title>Ticket Details</title>
   </head>
   <body>
     <div class="opacity-0 sm:opacity-100 md:absolute md:top-7 md:left-8">
       <div class="w-20 lg:w-28">
-        <img src="../static/assets/images/logo_white.svg" alt="" srcset="" />
+        <img src="/static/assets/images/logo_white.svg" alt="" srcset="" />
       </div>
     </div>
 
     <div class="p-4 lg:flex lg:flex-row-reverse md:p-20 lg:p-0">
-      <form class="h-screen lg:w-[60%] flex flex-col justify-center lg:px-32">
-        <h4 class="text-xl text-gray-500 font-extralight">Section 4 of 4</h4>
+
+
+      <form action="/ticket-details" method="POST" class="h-screen lg:w-[60%] flex flex-col justify-center lg:px-32">
+        <!-- <h4 class="text-xl text-gray-500 font-extralight">Section 4 of 4</h4> -->
+      
+        {% csrf_token %}
+      
         <h1
           class="text-xl font-medium text-accent bg-blue-100 px-12 py-3 inline-block mt-6 rounded-2xl mb-8"
         >
@@ -36,6 +41,7 @@
 
         <input
           id="ticketnumber"
+          name="tno"
           class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
           placeholder="Enter your ticket number"
           type="number"
@@ -45,7 +51,7 @@
             <label for="expiry" class="bg-white px-1.5 py-0 absolute top-[-9px] left-3 z-10">Date of Expiry</label>
             <input
               id="expiry"
-              name="expiry"
+              name="edate"
               type="date"
               class="relative w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
               placeholder="Select Date of Expiry"
@@ -64,7 +70,7 @@
           <select
             id="from"
             class="w-full mb-5 placeholder-dark border-2 border-dark rounded-md py-3 px-4"
-            name="from"
+            name="source"
           >
           <option>Chhatrapati Shivaji Maharaj Terminus</option>
           <option>Byculla</option>
@@ -288,6 +294,7 @@
 
         <!-- Buttons -->
         <button
+        type="submit"
           class="w-[10rem] px-8 mb-5 rounded-md bg-accent text-light py-3 hover:bg-opacity-90"
         >
           Submit
