@@ -15,7 +15,7 @@ def index(request):
 def LoginView(request):
 
     if request.method == "POST":
-        
+
         rd = request.POST
         print("rd :: ", rd)
 
@@ -46,7 +46,7 @@ def RegisterView(request):
         print("register")
         print("data :: ", request.POST)
 
-        
+
 
     return render(request, 'signup.html')
 
@@ -55,7 +55,7 @@ def RegisterView(request):
 
 def test(request):
 
-    return render(request, '')
+    return render(request, 'section1.html')
 
 
 
