@@ -898,7 +898,7 @@ video {
 }
 
 .bg-hero {
-  background-image: url('../src/static/assets/images/hero.png');
+  background-image: url('/static/assets/images/hero.png');
 }
 
 .bg-center {

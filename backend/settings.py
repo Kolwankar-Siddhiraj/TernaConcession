@@ -12,11 +12,14 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 import mimetypes
 
-mimetypes.add_type("text/css", ".css", True)
-mimetypes.add_type("text/html", ".html", True)
-mimetypes.add_type("text/javascript", ".js", True)
+load_dotenv()
+
+# mimetypes.add_type("text/css", ".css", True)
+# mimetypes.add_type("text/html", ".html", True)
+# mimetypes.add_type("text/javascript", ".js", True)
 
 
 
@@ -84,12 +87,32 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+
+
+# custom db config
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'TC1',
+        'USER': 'postgres',
+        'PASSWORD': 'ds123',
+        'HOST': 'localhost'
     }
 }
+
+
+
 
 
 # Password validation
@@ -146,7 +169,7 @@ MEDIA_URL = '/media/'
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend/src/static/')
+    os.path.join(BASE_DIR, 'frontend/src/static')
 ]
 
 

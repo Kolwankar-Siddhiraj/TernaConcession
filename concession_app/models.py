@@ -63,15 +63,13 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     # birth_date => {"date": 21, "month": 12, "year": 2023}
     birth_date = models.DateField(blank=True, null=True)
 
-    # for admin only
-    departments = models.CharField(max_length=100)
-
     is_verified = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     email_verified_at = models.DateTimeField(blank=True, null=True)
     status = models.CharField(max_length=100, blank=True, null=True,choices=STATUS_CHOICES)  # active, inactive, banned
 
     is_staff = models.BooleanField(default=False)
-
+    
     # timestamps
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
@@ -93,6 +91,13 @@ class StudentInfo(models.Model):
     semester = models.CharField(max_length=10)
     student_id_no = models.CharField(max_length=100)
     roll_no = models.CharField(max_length=100)
+
+
+class ConcessionAdmin(models.Model):
+
+    admin = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    department = ArrayField(models.CharField(max_length=100, null=True, blank=True), size=12)
+    admin_id_no = models.CharField(max_length=100)
 
 
 class TrainDetail(models.Model):
@@ -153,14 +158,13 @@ class ConcessionApplication(models.Model):
 class UserVerification(models.Model):
     email = models.CharField(max_length=70, blank=True, null=True)
     token = models.CharField(unique=True, max_length=200, blank=True, null=True)
-    # action => signup | forgotPasword | twoStepAuth | login
+    # action => signup | forgotPasword | twoStepAuth | login 
     action = models.CharField(max_length=50, blank=True, null=True)
-    expire_on = models.DateTimeField(null=True, blank=True)
-    # metadata = models.JSONField(max_length=512, blank=True, null=True)
+    token_expire_on = models.DateTimeField(null=True, blank=True)
+    metadata = models.JSONField(max_length=512, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return self.email
-
 
 

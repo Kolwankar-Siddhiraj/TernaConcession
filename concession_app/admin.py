@@ -29,5 +29,7 @@ admin.site.register(StudentInfo)
 admin.site.register(TrainDetail)
 admin.site.register(TicketDetail)
 admin.site.register(ConcessionApplication)
+admin.site.register(ConcessionAdmin)
+admin.site.register(UserVerification)
 
 
