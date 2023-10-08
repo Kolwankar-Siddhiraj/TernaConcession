@@ -55,7 +55,7 @@ def RegisterView(request):
 
 def test(request):
 
-    return render(request, 'section1.html')
+    return render(request, 'student/student_dashboard.html')
 
 
 
