@@ -122,7 +122,7 @@ def PersonalDetailsView(request):
 
         return redirect('/college-details')
 
-    return render(request, 'section1.html')
+    return render(request, 'student/student_dashboard.html')
 
 
 def CollegeDetailsView(request):
