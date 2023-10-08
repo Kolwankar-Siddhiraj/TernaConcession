@@ -1,272 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="https://cdn-icons-png.flaticon.com/512/3104/3104133.png"
-      type="image/png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/frontend/src/static/dist/output.css" />
-    <title>View Profile</title>
-  </head>
-  <body class="h-screen">
-    <div class="flex flex-col h-full">
-      <nav
-        class="w-full h-[70px] bg-white flex justify-between items-center px-6 py-4 border-b-2 border-gray-00"
-      >
-        <div class="w-20 lg:w-28">
-          <img
-            src="/frontend/src/static/assets/images/logo_blue.svg"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <div class="relative">
-          <div class="w-[20px] absolute top-[14px] left-12">
-            <img
-              src="/frontend/src/static/assets/images/search.svg"
-              alt=""
-              srcset=""
-            />
-          </div>
-          <input
-            class="h-11 w-full bg-button_trans rounded-xl text-sm text-slate-700 font-thin tracking-wider px-20 py-2 focus:outline-1 focus:outline-gray-400"
-            type="text"
-            id="search"
-            placeholder="Search here.."
-          />
-        </div>
-      </nav>
 
-      <!-- main  -->
-      <main class="flex w-screen flex-grow bg-gray-50">
-        <section
-          class="h-full bg-white w-[20%] flex flex-col items-center justify-between py-10"
-        >
-          <div class="">
-            <h1 class="name text-xl text-center">Siddhiraj R.K</h1>
-            <p class="text-descriptive text-center">srk@ternaengg.ac.in</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3104/3104133.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/dist/output.css" />
+  <title>View Profile</title>
+</head>
 
-            <!-- Wrapper -->
-            <div class="flex flex-col mt-10 gap-3">
-              <div class="bg-button_trans w-56 h-12 rounded-xl">
-                <button
-                  class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90"
-                >
-                  <img
-                    class="inline h-5 w-5"
-                    src="/frontend/src/static/assets/images/all.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="">All</div>
-                </button>
-              </div>
-              <div class="bg-button_trans w-56 h-12 rounded-xl">
-                <button
-                  class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90"
-                >
-                  <img
-                    class="inline h-5 w-5"
-                    src="/frontend/src/static/assets/images/completed.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="">Completed</div>
-                </button>
-              </div>
-              <div class="bg-accent w-56 h-12 rounded-xl">
-                <button
-                  class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90"
-                >
-                  <img
-                    class="inline h-5 w-5"
-                    src="/frontend/src/static/assets/images/ongoing.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="text-white">Ongoing</div>
-                </button>
-              </div>
-              <div class="bg-button_trans w-56 h-12 rounded-xl">
-                <button
-                  class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90"
-                >
-                  <img
-                    class="inline h-5 w-5"
-                    src="/frontend/src/static/assets/images/rejected.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="">Rejected</div>
-                </button>
-              </div>
+<body class="h-screen">
+  <div class="flex flex-col h-full">
+    <nav class="w-full h-[70px] bg-white flex justify-between items-center px-6 py-4 border-b-2 border-gray-00">
+      <div class="w-20 lg:w-28">
+        <img src="/static/assets/images/logo_blue.svg" alt="" srcset="" />
+      </div>
+      <div class="relative">
+        <div class="w-[20px] absolute top-[14px] left-12">
+          <img src="/static/assets/images/search.svg" alt="" srcset="" />
+        </div>
+        <input
+          class="h-11 w-full bg-button_trans rounded-xl text-sm text-slate-700 font-thin tracking-wider px-20 py-2 focus:outline-1 focus:outline-gray-400"
+          type="text" id="search" placeholder="Search here.." />
+      </div>
+    </nav>
+
+    <!-- main  -->
+    <main class="flex w-screen flex-grow bg-gray-50">
+      <section class="h-full bg-white w-[20%] flex flex-col items-center justify-between py-10">
+        <div class="">
+          <h1 class="name text-xl text-center">Siddhiraj R.K</h1>
+          <p class="text-descriptive text-center">srk@ternaengg.ac.in</p>
+
+          <!-- Wrapper -->
+          <div class="flex flex-col mt-10 gap-3">
+            <div class="bg-button_trans w-56 h-12 rounded-xl">
+              <button
+                class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                <img class="inline h-5 w-5" src="/static/assets/images/all.svg" alt="" srcset="" />
+                <div class="">All</div>
+              </button>
+            </div>
+            <div class="bg-button_trans w-56 h-12 rounded-xl">
+              <button
+                class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                <img class="inline h-5 w-5" src="/static/assets/images/completed.svg" alt="" srcset="" />
+                <div class="">Completed</div>
+              </button>
+            </div>
+            <div class="bg-accent w-56 h-12 rounded-xl">
+              <button
+                class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                <img class="inline h-5 w-5" src="/static/assets/images/ongoing.svg" alt="" srcset="" />
+                <div class="text-white">Ongoing</div>
+              </button>
+            </div>
+            <div class="bg-button_trans w-56 h-12 rounded-xl">
+              <button
+                class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
+                <img class="inline h-5 w-5" src="/static/assets/images/rejected.svg" alt="" srcset="" />
+                <div class="">Rejected</div>
+              </button>
             </div>
           </div>
+        </div>
 
-          <div class="flex justify-center items-center">
-            <img
-              src="/frontend/src/static/assets/images/logout.svg"
-              alt=""
-              srcset=""
-            />
-            <p class="">Logout</p>
+        <div class="flex justify-center items-center">
+          <img src="/static/assets/images/logout.svg" alt="" srcset="" />
+          <p class="">Logout</p>
+        </div>
+      </section>
+
+      <!-- right hand side -->
+      <section class="flex-grow bg-gray-100 p-4">
+        <div class="bg-white h-full flex flex-col items-start justify-center gap-8 px-[6rem]">
+          <div class="flex items-end gap-3">
+            <label for="name" class="text-xl font-medium">Name:</label>
+            <div class="text-lg text-descriptive">Nilesh Gawli</div>
           </div>
-        </section>
-
-        <!-- right hand side -->
-        <section class="flex-grow bg-gray-100 p-4">
-          <div
-            class="bg-white h-full flex flex-col items-start justify-center gap-8 px-[6rem]"
-          >
-            <div class="flex items-end gap-3">
-              <label for="name" class="text-xl font-medium">Name:</label>
-              <div class="text-lg text-descriptive">Nilesh Gawli</div>
-            </div>
-            <div class="flex flex-col gap-2">
-              <div class="flex items-end gap-8">
-                <div class="flex items-center gap-3">
-                  <img
-                    src="/frontend/src/static/assets/images/phone.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <p class="text-descriptive">+91 8369174779</p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <img
-                    src="/frontend/src/static/assets/images/gmail_descriptive.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <p class="text-descriptive">
-                    nileshgawli2223@ternaengg.ac.in
-                  </p>
-                </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-end gap-8">
+              <div class="flex items-center gap-3">
+                <img src="/static/assets/images/phone.svg" alt="" srcset="" />
+                <p class="text-descriptive">+91 8369174779</p>
               </div>
               <div class="flex items-center gap-3">
-                <img
-                  src="/frontend/src/static/assets/images/location.svg"
-                  alt=""
-                  srcset=""
-                />
+                <img src="/static/assets/images/gmail_descriptive.svg" alt="" srcset="" />
                 <p class="text-descriptive">
-                  Ghatkopar West, 400086, Mumbai, Maharashtra
+                  nileshgawli2223@ternaengg.ac.in
                 </p>
               </div>
             </div>
-
-            <div class="flex flex-col gap-4">
-              <div class="flex items-end gap-8">
-                <div class="flex items-end gap-3">
-                  <label for="department" class="text-xl font-medium"
-                    >Department:</label
-                  >
-                  <div class="text-descriptive">Computer Engineering</div>
-                </div>
-                <div class="flex items-end gap-3">
-                  <label for="semester" class="text-xl font-medium"
-                    >Semester:</label
-                  >
-                  <div class="text-descriptive">V</div>
-                </div>
-              </div>
-              <div class="flex items-end gap-3">
-                <label for="rollno" class="text-xl font-medium">Roll No:</label>
-                <div class="text-descriptive">75</div>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-4">
-              <div class="flex items-end gap-8">
-                <div class="flex items-end gap-3">
-                  <label for="from" class="text-xl font-medium">From:</label>
-                  <div class="text-descriptive">Ghatkopar</div>
-                </div>
-                <div class="flex items-end gap-3">
-                  <label for="to" class="text-xl font-medium">To:</label>
-                  <div class="text-descriptive">Nerul</div>
-                </div>
-              </div>
-              <div class="flex items-end gap-8">
-                <div class="flex items-end gap-3">
-                  <label for="period" class="text-xl font-medium"
-                    >Period:</label
-                  >
-                  <div class="text-descriptive">Quaterly</div>
-                </div>
-                <div class="flex items-end gap-3">
-                  <label for="line" class="text-xl font-medium"
-                    >Railway Line:</label
-                  >
-                  <div class="text-descriptive">Harbour</div>
-                </div>
-                <div class="flex items-end gap-3">
-                  <label for="class" class="text-xl font-medium">class:</label>
-                  <div class="text-descriptive">First</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-4">
-              <div class="flex items-end gap-8">
-                <div class="flex items-end gap-3">
-                  <label for="ticketno" class="text-xl font-medium"
-                    >Ticket No:</label
-                  >
-                  <div class="text-descriptive">6900000</div>
-                </div>
-                <div class="flex items-end gap-3">
-                  <label for="expiry" class="text-xl font-medium"
-                    >Date of Expire:</label
-                  >
-                  <div class="text-descriptive">32/08/2023</div>
-                </div>
-              </div>
-              <div class="flex items-end gap-3">
-                <label for="application_date" class="text-xl font-medium"
-                  >Date of Application:</label
-                >
-                <div class="text-descriptive">30/08/2023</div>
-              </div>
-            </div>
-
-            <div class="flex gap-4">
-               <button
-                class="px-12 rounded-2xl bg-green-500 text-light py-2 hover:bg-opacity-90"
-              >
-                Accept
-              </button>
-              <button
-                class="px-12 rounded-2xl bg-red-500 text-light py-2 hover:bg-opacity-90"
-              >
-                Reject
-              </button>
-
+            <div class="flex items-center gap-3">
+              <img src="/static/assets/images/location.svg" alt="" srcset="" />
+              <p class="text-descriptive">
+                Ghatkopar West, 400086, Mumbai, Maharashtra
+              </p>
             </div>
           </div>
-        </section>
-      </main>
-    </div>
 
-    <!-- jQuery CDN -->
+          <div class="flex flex-col gap-4">
+            <div class="flex items-end gap-8">
+              <div class="flex items-end gap-3">
+                <label for="department" class="text-xl font-medium">Department:</label>
+                <div class="text-descriptive">Computer Engineering</div>
+              </div>
+              <div class="flex items-end gap-3">
+                <label for="semester" class="text-xl font-medium">Semester:</label>
+                <div class="text-descriptive">V</div>
+              </div>
+            </div>
+            <div class="flex items-end gap-3">
+              <label for="rollno" class="text-xl font-medium">Roll No:</label>
+              <div class="text-descriptive">75</div>
+            </div>
+          </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.min.js"
-      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-      crossorigin="anonymous"
-    ></script>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-end gap-8">
+              <div class="flex items-end gap-3">
+                <label for="from" class="text-xl font-medium">From:</label>
+                <div class="text-descriptive">Ghatkopar</div>
+              </div>
+              <div class="flex items-end gap-3">
+                <label for="to" class="text-xl font-medium">To:</label>
+                <div class="text-descriptive">Nerul</div>
+              </div>
+            </div>
+            <div class="flex items-end gap-8">
+              <div class="flex items-end gap-3">
+                <label for="period" class="text-xl font-medium">Period:</label>
+                <div class="text-descriptive">Quaterly</div>
+              </div>
+              <div class="flex items-end gap-3">
+                <label for="line" class="text-xl font-medium">Railway Line:</label>
+                <div class="text-descriptive">Harbour</div>
+              </div>
+              <div class="flex items-end gap-3">
+                <label for="class" class="text-xl font-medium">class:</label>
+                <div class="text-descriptive">First</div>
+              </div>
+            </div>
+          </div>
 
-    <!-- JS FILE -->
-    <script src="script.js"></script>
-  </body>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-end gap-8">
+              <div class="flex items-end gap-3">
+                <label for="ticketno" class="text-xl font-medium">Ticket No:</label>
+                <div class="text-descriptive">6900000</div>
+              </div>
+              <div class="flex items-end gap-3">
+                <label for="expiry" class="text-xl font-medium">Date of Expire:</label>
+                <div class="text-descriptive">32/08/2023</div>
+              </div>
+            </div>
+            <div class="flex items-end gap-3">
+              <label for="application_date" class="text-xl font-medium">Date of Application:</label>
+              <div class="text-descriptive">30/08/2023</div>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <button class="px-12 rounded-2xl bg-green-500 text-light py-2 hover:bg-opacity-90">
+              Accept
+            </button>
+            <button class="px-12 rounded-2xl bg-red-500 text-light py-2 hover:bg-opacity-90">
+              Reject
+            </button>
+
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- jQuery CDN -->
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+  <!-- JS FILE -->
+  <script src="script.js"></script>
+</body>
+
 </html>

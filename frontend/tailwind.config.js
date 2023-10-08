@@ -21,7 +21,7 @@ module.exports = {
       },
       backgroundImage: {
         // 'logo-white': "url('../src/static/assets/images/logo-white.svg')",
-        'logo-white': "url('/frontend/src/static/assets/images/hero.png')",
+        'logo-white': "url('/static/assets/images/hero.png')",
         'arrow': "url('../src/static/assets/images/arrow.png')",
         'hero': "url('../src/static/assets/images/hero.png')",
       },

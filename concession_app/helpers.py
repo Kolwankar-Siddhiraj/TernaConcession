@@ -37,7 +37,7 @@ def sendVerificationEmail(email, name, action, metadata={}):
     token = createUserVerificationToken(email=email, action=action, metadata=metadata)
     print(f"\ntoken :: {token}")
     domain = "http://127.0.0.1:8000"
-    url = f"{domain}/api/v1/concession/{action}/verify/{token}"
+    url = f"{domain}/{action}/verify/{token}"
 
     subject = f"Hey {name}, Welcome to Terna Railway Concession !"
     msg = f"Token :: {token}"
