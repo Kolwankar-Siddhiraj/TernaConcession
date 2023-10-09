@@ -90,9 +90,7 @@
             <!-- <img class="w-4" src="/static/assets/images/clock.svg" alt="" /> -->
             <p class="due-label text-descriptive">Applied on</p>
           </div>
-          <button class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90">
-            View Profile
-          </button>
+          <p class="branch text-descriptive"></p>
         </div>
         
         {% for ca in applications %}
@@ -105,9 +103,11 @@
               <img class="w-4" src="/static/assets/images/clock.svg" alt="" />
               <p class="due-label text-descriptive">{{ca.created_at}}</p>
             </div>
-            <button class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90">
-              View Profile
-            </button>
+            <a href="/{{ca.id}}/view-application">
+              <button class="px-8 rounded-2xl bg-accent text-light py-2 hover:bg-opacity-90">
+                View Profile
+              </button>
+            </a>
           </div>
 
         {% endfor %}

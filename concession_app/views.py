@@ -28,7 +28,16 @@ def LoginView(request):
                 return render(request, 'login.html', {"success": False, "message": "Email is not verified. Please verify Email and try Again !"})
 
             auth.login(request, user)
-            return render(request, 'login.html', {"success": True, "message": "User login successfully !", "data": None})
+
+            if user.user_type == "student":
+                return redirect('/s/dashboard')
+            elif user.user_type == "admin":
+                return redirect('/a/dashboard')
+            else:
+                return render(request, 'login.html', {"success": True, "message": "User login successfully !", "data": None})
+            
+
+            # if user.
         else:
             return render(request, 'login.html', {"success": False, "message": "Oppps! Creadentials does not matched!"})
 
