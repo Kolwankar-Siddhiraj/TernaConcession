@@ -276,3 +276,24 @@ def AdminDashbord(request):
 
 
 
+def ViewApplication(request, caid):
+
+    ConcessionApplication.objects.filter(id=caid).update(state="in-progress") 
+    application = model_to_dict(ConcessionApplication.objects.filter(id=caid).first())
+
+    print("application :: ", application)
+
+    return render(request, 'admin/view_application.html', application)
+
+
+
+def ApplicationStatus(request, caid, status):
+
+    if status in ["approved", "rejected"]:
+        ConcessionApplication.objects.filter(id=caid).update(state=status)
+
+    
+
+    return redirect('/a/dashboard')
+
+

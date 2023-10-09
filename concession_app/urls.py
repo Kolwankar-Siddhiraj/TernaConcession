@@ -20,6 +20,9 @@ urlpatterns = [
 
     # admin
     path('a/dashboard', AdminDashbord, name="admin-dashboard"),
+    path('<str:caid>/view-application', ViewApplication, name="view-application"),
+    path('<str:caid>/application/<str:status>', ApplicationStatus, name="application"),
+
 
     # test
     path('test', test, name="test"),

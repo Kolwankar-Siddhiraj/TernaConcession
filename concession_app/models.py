@@ -144,8 +144,8 @@ class TicketDetail(models.Model):
 class ConcessionApplication(models.Model):
 
     applicant = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    # state => applied | in-progress | completed | rejected
-    state = models.CharField(max_length=10, default="applied")
+    # state => applied | in-progress | approved | rejected
+    state = models.CharField(max_length=25, default="applied")
 
     # student info
     email = models.CharField(max_length=50)

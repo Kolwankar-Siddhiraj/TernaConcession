@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/dist/output.css" />
-  <title>View Profile</title>
+  <title>View Application</title>
 </head>
 
 <body class="h-screen">
@@ -33,8 +33,8 @@
     <main class="flex w-screen flex-grow bg-gray-50">
       <section class="h-full bg-white w-[20%] flex flex-col items-center justify-between py-10">
         <div class="">
-          <h1 class="name text-xl text-center">Siddhiraj R.K</h1>
-          <p class="text-descriptive text-center">srk@ternaengg.ac.in</p>
+          <h1 class="name text-xl text-center">{{user.first_name}} {{user.middle_name}} {{user.last_name}}</h1>
+          <p class="text-descriptive text-center">{{user.email}}</p>
 
           <!-- Wrapper -->
           <div class="flex flex-col mt-10 gap-3">
@@ -60,7 +60,8 @@
               </button>
             </div>
             <div class="bg-button_trans w-56 h-12 rounded-xl">
-              <button
+              <a href="/{{}}"></a>
+              <button 
                 class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
                 <img class="inline h-5 w-5" src="/static/assets/images/rejected.svg" alt="" srcset="" />
                 <div class="">Rejected</div>
@@ -80,25 +81,25 @@
         <div class="bg-white h-full flex flex-col items-start justify-center gap-8 px-[6rem]">
           <div class="flex items-end gap-3">
             <label for="name" class="text-xl font-medium">Name:</label>
-            <div class="text-lg text-descriptive">Nilesh Gawli</div>
+            <div class="text-lg text-descriptive">{{full_name}}</div>
           </div>
           <div class="flex flex-col gap-2">
             <div class="flex items-end gap-8">
               <div class="flex items-center gap-3">
                 <img src="/static/assets/images/phone.svg" alt="" srcset="" />
-                <p class="text-descriptive">+91 8369174779</p>
+                <p class="text-descriptive">+91 {{phone}}</p>
               </div>
               <div class="flex items-center gap-3">
                 <img src="/static/assets/images/gmail_descriptive.svg" alt="" srcset="" />
                 <p class="text-descriptive">
-                  nileshgawli2223@ternaengg.ac.in
+                  {{email}}
                 </p>
               </div>
             </div>
             <div class="flex items-center gap-3">
               <img src="/static/assets/images/location.svg" alt="" srcset="" />
               <p class="text-descriptive">
-                Ghatkopar West, 400086, Mumbai, Maharashtra
+                {{address}}
               </p>
             </div>
           </div>
@@ -107,16 +108,16 @@
             <div class="flex items-end gap-8">
               <div class="flex items-end gap-3">
                 <label for="department" class="text-xl font-medium">Department:</label>
-                <div class="text-descriptive">Computer Engineering</div>
+                <div class="text-descriptive">{{department}}</div>
               </div>
               <div class="flex items-end gap-3">
                 <label for="semester" class="text-xl font-medium">Semester:</label>
-                <div class="text-descriptive">V</div>
+                <div class="text-descriptive">{{semester}}</div>
               </div>
             </div>
             <div class="flex items-end gap-3">
               <label for="rollno" class="text-xl font-medium">Roll No:</label>
-              <div class="text-descriptive">75</div>
+              <div class="text-descriptive">{{roll_no}}</div>
             </div>
           </div>
 
@@ -124,25 +125,25 @@
             <div class="flex items-end gap-8">
               <div class="flex items-end gap-3">
                 <label for="from" class="text-xl font-medium">From:</label>
-                <div class="text-descriptive">Ghatkopar</div>
+                <div class="text-descriptive">{{source}}</div>
               </div>
               <div class="flex items-end gap-3">
                 <label for="to" class="text-xl font-medium">To:</label>
-                <div class="text-descriptive">Nerul</div>
+                <div class="text-descriptive">{{destination}}</div>
               </div>
             </div>
             <div class="flex items-end gap-8">
               <div class="flex items-end gap-3">
                 <label for="period" class="text-xl font-medium">Period:</label>
-                <div class="text-descriptive">Quaterly</div>
+                <div class="text-descriptive">{{pass_period}}</div>
               </div>
               <div class="flex items-end gap-3">
                 <label for="line" class="text-xl font-medium">Railway Line:</label>
-                <div class="text-descriptive">Harbour</div>
+                <div class="text-descriptive">{{railway_line}}</div>
               </div>
               <div class="flex items-end gap-3">
                 <label for="class" class="text-xl font-medium">class:</label>
-                <div class="text-descriptive">First</div>
+                <div class="text-descriptive">{{class_type}}</div>
               </div>
             </div>
           </div>
@@ -151,22 +152,22 @@
             <div class="flex items-end gap-8">
               <div class="flex items-end gap-3">
                 <label for="ticketno" class="text-xl font-medium">Ticket No:</label>
-                <div class="text-descriptive">6900000</div>
+                <div class="text-descriptive">{{ptd_ticket_no}}</div>
               </div>
               <div class="flex items-end gap-3">
                 <label for="expiry" class="text-xl font-medium">Date of Expire:</label>
-                <div class="text-descriptive">32/08/2023</div>
+                <div class="text-descriptive">{{ptd_expiry_date}}</div>
               </div>
             </div>
             <div class="flex items-end gap-3">
               <label for="application_date" class="text-xl font-medium">Date of Application:</label>
-              <div class="text-descriptive">30/08/2023</div>
+              <div class="text-descriptive">{{created_at}}</div>
             </div>
           </div>
 
           <div class="flex gap-4">
             <button class="px-12 rounded-2xl bg-green-500 text-light py-2 hover:bg-opacity-90">
-              Accept
+              Approved
             </button>
             <button class="px-12 rounded-2xl bg-red-500 text-light py-2 hover:bg-opacity-90">
               Reject
@@ -178,6 +179,8 @@
     </main>
   </div>
 
+
+  
   <!-- jQuery CDN -->
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"
