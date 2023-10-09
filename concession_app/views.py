@@ -1,6 +1,7 @@
 import json
 from django.shortcuts import redirect, render
 from django.contrib import auth
+from django.forms.models import model_to_dict
 
 from concession_app.models import *
 from concession_app.helpers import *
@@ -94,7 +95,6 @@ def VerifyUserView(request, action, token):
         return render(request, 'signup.html', {"success": False, "message": "Link has been expired!"})
 
 
-
 def Verified(request):
 
     return render(request, 'student/account_verified.html')
@@ -122,7 +122,7 @@ def PersonalDetailsView(request):
 
         return redirect('/college-details')
 
-    return render(request, 'student/student_dashboard.html')
+    return render(request, 'section1.html')
 
 
 def CollegeDetailsView(request):
@@ -191,12 +191,6 @@ def Homepage(request):
     return render(request, 'student/initial_homepage.html')
 
 
-
-def ApplyConcessionView(request):
-
-    return render(request, '')
-
-
 def ConcessionApplicationView(request):
 
     user = request.user
@@ -204,12 +198,13 @@ def ConcessionApplicationView(request):
     if ConcessionApplication.objects.filter(applicant__email=user.email, state__in=["applied", "in-progress"]):
         return render(request, 'dashboard.html', {"success": False, "message": "Already one application is in progress !"})
 
-    college_details = json.dumps(StudentInfo.objects.filter(student__email=user.email).first())
-    train_details = json.dumps(TrainDetail.objects.filter(student__email=user.email).first())
+    college_details = model_to_dict(StudentInfo.objects.filter(student__email=user.email).first())
+    train_details = model_to_dict(TrainDetail.objects.filter(student__email=user.email).first())
     ticket = TicketDetail.objects.filter(student__email=user.email).order_by('id').last()
+    user_obj = CustomUser.objects.filter(email=user.email).first()
 
     rd = {
-        "applicant": user.id,
+        "applicant": user_obj,
         "email": user.email,
         "full_name": f"{user.first_name} {user.middle_name} {user.last_name}",
         "phone": user.phone,
@@ -224,12 +219,11 @@ def ConcessionApplicationView(request):
     rd.update(college_details)
     rd.update(train_details)
 
+    rd.pop('student')
     print("rdata :: ", rd)
     new_application = ConcessionApplication.objects.create(**rd)
 
     return redirect('/s/dashboard')
-
-
 
 
 def TicketDetailsView(request):
@@ -246,19 +240,30 @@ def TicketDetailsView(request):
             new_ticket = TicketDetail.objects.create(student=user_obj, ticket_no=rd['tno'], expiry_date=rd['edate'], 
                                                      source=rd['source'], destination=rd['destination'])
 
-
-
-        # apply concessoin here
+        return redirect('/apply-concession')
 
     return render(request, 'student/section4.html')
 
 
-
-
 def StudentDashboard(request):
 
-    return render(request, 'admin/dashboard.html')
+    data = ConcessionApplication.objects.filter(applicant__email=request.user.email).order_by('-id').first()
 
+    data = model_to_dict(data)
+    print("data :: ", data)
+
+    return render(request, 'student/student_dashboard.html', data)
+
+
+def AdminDashbord(request):
+
+    user = request.user
+    print("user :: ", user)
+    dep_admin = ConcessionAdmin.objects.filter(admin__email=user.email).first()
+    applications = ConcessionApplication.objects.filter(department__in=dep_admin.department).values()
+
+    print("applications :: ", applications)
+    return render(request, 'admin/dashboard.html', {"applications": applications})
 
 
 

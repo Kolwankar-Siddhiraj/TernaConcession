@@ -92,12 +92,22 @@ class StudentInfo(models.Model):
     student_id_no = models.CharField(max_length=100)
     roll_no = models.CharField(max_length=100)
 
+    # timestamps
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+
+
 
 class ConcessionAdmin(models.Model):
 
     admin = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     department = ArrayField(models.CharField(max_length=100, null=True, blank=True), size=12)
     admin_id_no = models.CharField(max_length=100)
+
+    # timestamps
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+
 
 
 class TrainDetail(models.Model):
@@ -111,6 +121,11 @@ class TrainDetail(models.Model):
     destination = models.CharField(max_length=30)
     route_via = models.CharField(max_length=30, null=True, blank=True)
 
+    # timestamps
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+
+
 
 class TicketDetail(models.Model):
 
@@ -119,6 +134,11 @@ class TicketDetail(models.Model):
     expiry_date = models.DateField(blank=True, null=True)
     source = models.CharField(max_length=30)
     destination = models.CharField(max_length=30)
+
+    # timestamps
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+
 
 
 class ConcessionApplication(models.Model):
@@ -153,6 +173,11 @@ class ConcessionApplication(models.Model):
     source = models.CharField(max_length=30)
     destination = models.CharField(max_length=30)
     route_via = models.CharField(max_length=30, null=True, blank=True)
+
+    # timestamps
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+
 
 
 class UserVerification(models.Model):

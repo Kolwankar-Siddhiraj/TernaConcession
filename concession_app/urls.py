@@ -14,10 +14,14 @@ urlpatterns = [
     path('train-details', TrainDetailsView, name="train-details"),
     path('ticket-details', TicketDetailsView, name="train-details"),
     path('homepage', Homepage, name="homepage"),
-    path('apply-concession', ApplyConcessionView, name="apply-concession"),
+    path('apply-concession', ConcessionApplicationView, name="apply-concession"),
     path('s/dashboard', StudentDashboard, name="student-dashboard"),
 
-    
+
+    # admin
+    path('a/dashboard', AdminDashbord, name="admin-dashboard"),
+
     # test
     path('test', test, name="test"),
 ]
+
