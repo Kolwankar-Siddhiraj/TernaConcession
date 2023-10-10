@@ -5,7 +5,7 @@ from django.forms.models import model_to_dict
 
 from concession_app.models import *
 from concession_app.helpers import *
-
+from concession_app.access_decorators import *
 
 
 
@@ -14,6 +14,7 @@ def index(request):
     return render(request, 'index.html')
 
 
+@no_auth
 def LoginView(request):
 
     if request.method == "POST":
@@ -44,6 +45,7 @@ def LoginView(request):
     return render(request, 'login.html')
 
 
+@no_auth
 def RegisterView(request):
 
     if request.method == "POST":
@@ -72,14 +74,12 @@ def RegisterView(request):
     return render(request, 'signup.html')
 
 
-
-
 def test(request):
 
     return render(request, 'section1.html')
 
 
-
+@no_auth
 def VerifyUserView(request, action, token):
 
     UserVerification.objects.filter(token_expire_on__lte=datetime.now()).delete()
@@ -104,11 +104,13 @@ def VerifyUserView(request, action, token):
         return render(request, 'signup.html', {"success": False, "message": "Link has been expired!"})
 
 
+@student
 def Verified(request):
 
     return render(request, 'student/account_verified.html')
 
 
+@student
 def PersonalDetailsView(request):
 
     if request.method == "POST":
@@ -134,6 +136,7 @@ def PersonalDetailsView(request):
     return render(request, 'section1.html')
 
 
+@student
 def CollegeDetailsView(request):
 
     if request.method == "POST":
@@ -162,6 +165,7 @@ def CollegeDetailsView(request):
     return render(request, 'section2.html')
 
 
+@student
 def TrainDetailsView(request):
 
     if request.method == "POST":
@@ -195,11 +199,13 @@ def TrainDetailsView(request):
     return render(request, 'section3.html')
 
 
+@student
 def Homepage(request):
 
     return render(request, 'student/initial_homepage.html')
 
 
+@student
 def ConcessionApplicationView(request):
 
     user = request.user
@@ -235,6 +241,7 @@ def ConcessionApplicationView(request):
     return redirect('/s/dashboard')
 
 
+@student
 def TicketDetailsView(request):
 
     if request.method == "POST":
@@ -254,6 +261,7 @@ def TicketDetailsView(request):
     return render(request, 'student/section4.html')
 
 
+@student
 def StudentDashboard(request):
 
     data = ConcessionApplication.objects.filter(applicant__email=request.user.email).order_by('-id').first()
@@ -264,6 +272,7 @@ def StudentDashboard(request):
     return render(request, 'student/student_dashboard.html', data)
 
 
+@admin
 def AdminDashbord(request):
 
     user = request.user
@@ -275,7 +284,7 @@ def AdminDashbord(request):
     return render(request, 'admin/dashboard.html', {"applications": applications})
 
 
-
+@admin
 def ViewApplication(request, caid):
 
     ConcessionApplication.objects.filter(id=caid).update(state="in-progress") 
@@ -286,14 +295,24 @@ def ViewApplication(request, caid):
     return render(request, 'admin/view_application.html', application)
 
 
-
+@admin
 def ApplicationStatus(request, caid, status):
 
     if status in ["approved", "rejected"]:
-        ConcessionApplication.objects.filter(id=caid).update(state=status)
+        ca = ConcessionApplication.objects.filter(id=caid).first()
+        ca.state=status
+        ca.save()
 
-    
+        if sendApplicationStatusEmail(ca.email, (ca.full_name).split(" ")[0], status):
+            return redirect('/a/dashboard')
+        else:
+            return redirect(f'/{caid}/view-application')
 
-    return redirect('/a/dashboard')
+
+def LogoutView(request):
+
+    auth.logout(request)
+    return redirect('/login')
+
 
 

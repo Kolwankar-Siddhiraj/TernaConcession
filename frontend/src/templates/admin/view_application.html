@@ -60,7 +60,6 @@
               </button>
             </div>
             <div class="bg-button_trans w-56 h-12 rounded-xl">
-              <a href="/{{}}"></a>
               <button 
                 class="flex gap-4 items-center juststartw-full h-full text-descriptive bg-transparent rounded-xl text-xs px-4 py-0 font-sans lg:text-base lg:px-8 hover:opacity-90">
                 <img class="inline h-5 w-5" src="/static/assets/images/rejected.svg" alt="" srcset="" />
@@ -166,12 +165,17 @@
           </div>
 
           <div class="flex gap-4">
-            <button class="px-12 rounded-2xl bg-green-500 text-light py-2 hover:bg-opacity-90">
-              Approved
-            </button>
-            <button class="px-12 rounded-2xl bg-red-500 text-light py-2 hover:bg-opacity-90">
-              Reject
-            </button>
+            <a href="/{{id}}/application/approved">
+              <button class="px-12 rounded-2xl bg-green-500 text-light py-2 hover:bg-opacity-90">
+                Approve
+              </button>
+            </a>
+
+            <a href="/{{id}}/application/rejected">
+              <button class="px-12 rounded-2xl bg-red-500 text-light py-2 hover:bg-opacity-90">
+                Reject
+              </button>
+            </a>
 
           </div>
         </div>

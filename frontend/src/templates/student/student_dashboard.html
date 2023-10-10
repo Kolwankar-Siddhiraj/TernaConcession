@@ -146,7 +146,16 @@
             </div>
             <div class="flex justify-center items-center">
               <span>Status: </span>
-              <p class="bg-yellow-300  border-2 border-r-yellow-400 rounded-full py-2 px-6">{{state}}</p>
+
+              {% if state == "applied" %}
+                <p class="bg-yellow-300  border-2 border-r-yellow-400 rounded-full py-2 px-6">{{state}}</p>
+              {% elif state == "in-progress" %}
+                <p class="bg-pink-300  border-2 border-r-yellow-400 rounded-full py-2 px-6">{{state}}</p>
+              {% elif state == "approved" %}
+                <p class="bg-green-300  border-2 border-r-yellow-400 rounded-full py-2 px-6">{{state}}</p>
+              {% elif state == "rejected" %}
+                <p class="bg-red-300  border-2 border-r-yellow-400 rounded-full py-2 px-6">{{state}}</p>
+              {% endif %}
             </div>
           </div>
             <div class="flex flex-col gap-2">

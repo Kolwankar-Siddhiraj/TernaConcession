@@ -6,6 +6,7 @@ urlpatterns = [
     path('register', RegisterView, name="register"),
     path('<str:action>/verify/<str:token>', VerifyUserView, name="verify-user"),
     path('verified', Verified, name="verified"),
+    path('logout', LogoutView, name="logout"),
 
 
     # student

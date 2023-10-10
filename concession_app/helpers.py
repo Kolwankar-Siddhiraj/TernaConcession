@@ -51,3 +51,18 @@ def sendVerificationEmail(email, name, action, metadata={}):
     else:
         return False
 
+
+def sendApplicationStatusEmail(email, name, status):
+
+    subject = f"Hey {name}, Update on Railway Concession !"
+    msg = f"Your application for Railway concession is {status} by the admin."
+    html_message = render_to_string('mail_templates/application_status.html', {"name": name, "status": status})
+
+    res = send_mail(subject, msg, "Terna Engineering College", [email, "connect.siddhiraj@gmail.com"], html_message=html_message, fail_silently=False)
+    print("res :: ", res)
+
+    if res == 1:
+        return True
+    else:
+        return False
+
