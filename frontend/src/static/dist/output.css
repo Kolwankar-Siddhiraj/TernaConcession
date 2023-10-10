@@ -570,6 +570,10 @@ video {
   z-index: 10;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -665,6 +669,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[100\%\] {
+  height: 100%;
 }
 
 .w-0 {
@@ -978,6 +986,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .text-center {
