@@ -27,8 +27,13 @@
           <li>Services</li>
           <li>Contact Us</li>
         </ul>
+
         <a href="/login">
-          <button class="bg-accent px-12 py-3 text-light rounded-xl">Login</button>
+          {% if request.user.is_authenticated %}
+          <button class="bg-accent px-12 py-3 text-light rounded-xl">Dashboard</button>
+          {% else %}
+            <button class="bg-accent px-12 py-3 text-light rounded-xl">Login</button>
+          {% endif %}
         </a>
       </div>
     </nav>
@@ -39,7 +44,11 @@
             Easiest Way to Get <br> Concession from <br> college
           </h1>
           <p class="text-descriptive font-sans font-semibold tracking-wide">Why pay more when you can get those amazing <br> discounts on railway tickets? Our fabulous <br> Railway concession services.</p>
+          
+          
+          {% if not request.user.is_authenticated %}
           <div class="flex gap-3">
+
             <a href="/login">
               <button class="bg-accent px-12 py-3 text-light rounded-xl">Login</button>
             </a>
@@ -48,7 +57,10 @@
             </a>
 
           </div>
+          {% endif %}
+        
         </div>
+
         <div class="w-[40%]">
           <img src="/static/assets/images/landing_img.svg" alt="">
         </div>
