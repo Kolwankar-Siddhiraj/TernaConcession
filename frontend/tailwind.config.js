@@ -16,9 +16,9 @@ module.exports = {
         descriptive: '#737373',
         button_trans: 'rgba(150, 160, 193, 22%)',
       },
-      fontFamily: {
-        sans: ['Kanit', 'sans-serif']
-      },
+      // fontFamily: {
+      //   sans: ['Kanit', 'sans-serif']
+      // },
       backgroundImage: {
         // 'logo-white': "url('../src/static/assets/images/logo-white.svg')",
         'logo-white': "url('/static/assets/images/hero.png')",
