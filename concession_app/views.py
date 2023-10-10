@@ -36,7 +36,7 @@ def LoginView(request):
                 return redirect('/a/dashboard')
             else:
                 return render(request, 'login.html', {"success": True, "message": "User login successfully !", "data": None})
-            
+
 
             # if user.
         else:
@@ -54,14 +54,14 @@ def RegisterView(request):
         print("rd :: ", rd)
 
         if rd['email'].split('@')[1] != "gmail.com": # change this to ternaengg.ac.in
-            return render(request, 'login.html', {"success": False, "message": f"Only email from Terna Engineering College is accepted !"})
+            return render(request, 'signup.html', {"success": False, "message": f"Only email from Terna Engineering College is accepted !"})
 
         user_obj = CustomUser.objects.filter(email=rd['email']).first()
         if user_obj is not None and user_obj.is_verified:
-            return render(request, 'login.html', {"success": False, "message": f"User with email '{rd['email']}' already exists !"})
+            return render(request, 'signup.html', {"success": False, "message": f"User with email '{rd['email']}' already exists !"})
 
         if not sendVerificationEmail(rd['email'], rd['fname'], "signup", rd):
-            return render(request, 'login.html', {"success":False, "message": "Email not sent !"})
+            return render(request, 'signup.html', {"success":False, "message": "Email not sent !"})
 
         if user_obj == None:
             CustomUser.objects.create_user(email=rd['email'], username=rd['email'], password=rd['password'],
@@ -140,26 +140,26 @@ def PersonalDetailsView(request):
 def CollegeDetailsView(request):
 
     if request.method == "POST":
-        rd = request.POST   
+        rd = request.POST
         user = request.user
         print("rd :: ", rd)
 
         student = StudentInfo.objects.filter(student__email=user.email).first()
 
         if student is not None:
-            
+
             student.department = rd['department']
             student.semester = rd['semester']
             student.student_id_no = rd['s_id']
             student.roll_no = rd['roll_no']
 
             student.save()
-            
+
         else:
             user_obj = CustomUser.objects.filter(email=user.email).first()
             student = StudentInfo.objects.create(student=user_obj, department=rd['department'], semester=rd['semester'],
                                                  student_id_no=rd['s_id'], roll_no=rd['roll_no'])
-        
+
         return redirect('/train-details')
 
     return render(request, 'section2.html')
@@ -177,7 +177,7 @@ def TrainDetailsView(request):
         train_details = TrainDetail.objects.filter(student__email=user.email).first()
 
         if train_details is not None:
-            
+
             train_details.railway_line = rd['line']
             train_details.class_type = rd['class']
             train_details.pass_period = rd['period']
@@ -190,11 +190,11 @@ def TrainDetailsView(request):
         else:
             user_obj = CustomUser.objects.filter(email=user.email).first()
             train_details = TrainDetail.objects.create(student=user_obj, railway_line=rd['line'], pass_period=rd['period'],
-                                                        class_type=rd['class'], source=rd['source'], destination=rd['destination'], 
+                                                        class_type=rd['class'], source=rd['source'], destination=rd['destination'],
                                                         route_via=rd.get('route_via', None))
-        
+
         return redirect('/homepage')
-        
+
 
     return render(request, 'section3.html')
 
@@ -253,7 +253,7 @@ def TicketDetailsView(request):
 
         if ticket == None:
             user_obj = CustomUser.objects.filter(email=user.email).first()
-            new_ticket = TicketDetail.objects.create(student=user_obj, ticket_no=rd['tno'], expiry_date=rd['edate'], 
+            new_ticket = TicketDetail.objects.create(student=user_obj, ticket_no=rd['tno'], expiry_date=rd['edate'],
                                                      source=rd['source'], destination=rd['destination'])
 
         return redirect('/apply-concession')
